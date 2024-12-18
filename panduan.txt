@@ -1,0 +1,17 @@
+1. Pertama Install Minikube, jika Minikube sudah terinstall jalankan command
+    minikube start
+2. Kemudian jalankan command untuk membuat namespace dengan nama pnt-quiz
+    kubectl create namespace pnt-quiz
+3. Buat file deployment untuk Backend dan frontendnya dengan namespace pnt-quiz
+    untuk file frontend dan backendnya saya menggunakan project yang pernah saya buat sebelumnya 
+    di lab pnt dan yang saya input disini adalah file yaml yang saya gunakan untuk upload frontend dan backend 
+    ke kubernetes service dan image yang saya masukkan disini merupakab bukti bahwa aplikasi berhasil di deploy
+4. Aktifkan Ingress di minikube
+    minikube addons enable ingress
+5. Buat Konfigurasi Ingress
+6. Deploy semua konfigurasinya dengan menggunakan command
+    kubectl apply -f frontend.yaml
+    kubectl apply -f backend.yaml
+    kubectl apply -f ingress.yaml
+7. Gunakan command kubectl get pods dan kubectl get service untuk melihat ip eksternal yang di dapat
+8. Kemudian anda dapat membuka Ip tersebut di browser dan selesai.
